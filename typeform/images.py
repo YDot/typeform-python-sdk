@@ -7,11 +7,15 @@ class Images:
         """Constructor for Typeform Image class"""
         self.__client = client
 
-    def create(self, data: dict = {}) -> dict:
+    def create(self, image_base64: str, file_name: str, url: str = None) -> dict:
         """
         Creates an image. If the image doesn't come from a URL, it needs to be encoded in base64 format.
         """
-        return self.__client.request('post', '/images', data=data)
+        return self.__client.request('post', '/images', params={
+            'image': image_base64,
+            'file_name': file_name,
+            'url': url
+        })
 
     def delete(self, uid: str) -> str:
         """
