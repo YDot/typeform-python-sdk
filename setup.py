@@ -4,7 +4,7 @@ with open('README.md') as fp:
     long_description = fp.read()
 
 setup(
-    name='typeform',
+    name='typeform-fork',
     version='1.1.0',
     description='Python Client wrapper for Typeform API',
     long_description=long_description,
